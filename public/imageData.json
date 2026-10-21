@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "title": "Candy Assortment 1",
-    "url": "https://images.unsplash.com/photo-1575224300306-1b8da36134ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8MXx8JTIwY2FuZHl8ZW58MHx8fHwxNzkyNjE2NzkyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    "url": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8MXx8JTIwY2F0fGVufDB8fHx8MTc5MjYxNzM2OHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "alt": "cat"
   },
   {
     "id": 2,
-    "title": "Candy Assortment 2",
-    "url": "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8Mnx8JTIwY2FuZHl8ZW58MHx8fHwxNzkyNjE2NzkyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    "url": "https://images.unsplash.com/photo-1573865526739-10659fec78a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8Mnx8JTIwY2F0fGVufDB8fHx8MTc5MjYxNzM2OHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "alt": "cat"
   },
   {
     "id": 3,
-    "title": "Candy Assortment 3",
-    "url": "https://images.unsplash.com/photo-1765174639852-73f77b49e3c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8M3x8JTIwY2FuZHl8ZW58MHx8fHwxNzkyNjE2NzkyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    "url": "https://images.unsplash.com/photo-1764708844823-00d2188dafd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8M3x8JTIwY2F0fGVufDB8fHx8MTc5MjYxNzM2OHww&ixlib=rb-4.1.0&q=80&w=1080",
+    "alt": "cat"
   }
 ]
