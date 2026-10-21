@@ -14,7 +14,11 @@ const technologyIcons = import.meta.glob<string>("./assets/*", {
 });
 
 const ImageCardFetch = async (): Promise<Iimg[]> => {
-  const res = await fetch("/public/imageData.json");
+  const res = await fetch(`${import.meta.env.BASE_URL}imageData.json`);
+  if (!res.ok) {
+    throw new Error(`Failed to load images: ${res.status}`);
+  }
+
   const data: Iimg[] = await res.json();
   return data;
 };
