@@ -1,0 +1,41 @@
+Here is the `imageData.json` file. It is structured as an array of objects, which is the standard format for web fetching.
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Giant Panda 1",
+    "alt": "A panda in its natural habitat",
+    "url": "https://images.unsplash.com/photo-1703248187251-c897f32fe4ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8MXx8JTIwcGFuZGF8ZW58MHx8fHwxNzkyNTU4NTk0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  },
+  {
+    "id": 2,
+    "title": "Giant Panda 2",
+    "alt": "Close up of a panda",
+    "url": "https://images.unsplash.com/photo-1527118732049-c88155f2107c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8Mnx8JTIwcGFuZGF8ZW58MHx8fHwxNzkyNTU4NTk0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  },
+  {
+    "id": 3,
+    "title": "Giant Panda 3",
+    "alt": "Panda eating bamboo",
+    "url": "https://images.unsplash.com/photo-1777432736583-ee2e19ef15e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTA4OTIzfDB8MXxzZWFyY2h8M3x8JTIwcGFuZGF8ZW58MHx8fHwxNzkyNTU4NTk0fDA&ixlib=rb-4.1.0&q=80&w=1080"
+  }
+]
+```
+
+### How to use this in your website (JavaScript Example):
+If you host this file, you can fetch it and display the images like this:
+
+```javascript
+fetch('imageData.json')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(image => {
+      console.log(`Loading image: ${image.title}`);
+      const imgElement = document.createElement('img');
+      imgElement.src = image.url;
+      imgElement.alt = image.alt;
+      document.body.appendChild(imgElement);
+    });
+  });
+```
