@@ -5,12 +5,19 @@ import NavBar from "./navBar/navBar.tsx";
 import { Toaster } from "react-hot-toast";
 import Footer from "./footer/footer.tsx";
 import type { Itechnology } from "./typesFolder/techCardType";
+import type { Iimg } from "./typesFolder/imagetypeCard";
 
 const technologyIcons = import.meta.glob<string>("./assets/*", {
   eager: true,
   query: "?url",
   import: "default",
 });
+
+const ImageCardFetch = async (): Promise<Iimg[]> => {
+  const res = await fetch("/public/imageData.json");
+  const data: Iimg[] = await res.json();
+  return data;
+};
 
 const TechCardFetch = async () => {
   const response = await fetch(`${import.meta.env.BASE_URL}technologies.json`);
@@ -23,7 +30,9 @@ const TechCardFetch = async () => {
     const iconPath = technology.icon.replace("../src/assets/", "./assets/");
     const icon = technologyIcons[iconPath];
     if (!icon) {
-      throw new Error(`Missing bundled icon for ${technology.name}: ${technology.icon}`);
+      throw new Error(
+        `Missing bundled icon for ${technology.name}: ${technology.icon}`,
+      );
     }
 
     return { ...technology, icon };
@@ -32,6 +41,7 @@ const TechCardFetch = async () => {
 
 function App() {
   const techDataPromise = TechCardFetch();
+  const imageDataPromise = ImageCardFetch();
   return (
     <>
       <Toaster position="top-right" reverseOrder={true} />;
@@ -39,7 +49,10 @@ function App() {
         <NavBar />
         <HeroSection />
         <Suspense fallback={<div>Loading...</div>}>
-          <MainBody techDataPromise={techDataPromise} />
+          <MainBody
+            techDataPromise={techDataPromise}
+            ImageCardFetch={imageDataPromise}
+          />
         </Suspense>
         <Footer />
       </div>

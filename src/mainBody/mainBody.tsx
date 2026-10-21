@@ -2,13 +2,18 @@ import TechCard from "./techCard";
 import type { Itechnology } from "../typesFolder/techCardType";
 import { use, useState } from "react";
 import Stack from "./Stack";
+import type { Iimg } from "../typesFolder/imagetypeCard";
+import ImageHolder from "./imageHolder";
 
 const MainBody = ({
   techDataPromise,
+  ImageCardFetch,
 }: {
   techDataPromise: Promise<Itechnology[]>;
+  ImageCardFetch: Promise<Iimg[]>;
 }) => {
   const techData = use(techDataPromise);
+  const imgData = use(ImageCardFetch);
 
   const [savedCards, setSavedCards] = useState<Itechnology[]>([]);
 
@@ -71,6 +76,11 @@ const MainBody = ({
             handleRemoveAll={handleRemoveAll}
           />
         </div>
+      </div>
+      <div className="flex gap-4 w-full max-w-2xl mx-auto">
+        {imgData.map((img: Iimg) => (
+          <ImageHolder imgData={img} key={img.id} />
+        ))}
       </div>
     </div>
   );
